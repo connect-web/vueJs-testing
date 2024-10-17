@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js Conditional Rendering</title>
+</head>
+<body>
+<div id="app">
+    <h1>Conditional Rendering Example</h1>
+    <button @click="showMessage = !showMessage">Toggle Message</button>
+    <p v-if="showMessage">This message is conditionally rendered.</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            showMessage: false
+        }
+    });
+</script>
+</body>
+</html>

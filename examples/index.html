@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js App</title>
+</head>
+<body>
+<!-- Vue.js application mount point -->
+<div id="app"></div>
+
+<!-- Include Vue.js -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+<!-- Your custom script -->
+<script>
+    // Initialize Vue.js instance
+    new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue.js!'
+        },
+        template: `
+        <div>
+          <h1>{{ message }}</h1>
+        </div>
+      `
+    });
+</script>
+</body>
+</html>

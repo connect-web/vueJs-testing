@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js Form Validation</title>
+</head>
+<body>
+<div id="app">
+    <h1>Form Validation Example</h1>
+    <form @submit.prevent="handleSubmit">
+        <label for="email">Email:</label>
+        <input type="email" v-model="email" id="email" required>
+        <span v-if="email === ''">Email is required</span>
+        <button type="submit">Submit</button>
+    </form>
+    <p v-if="submitted">Form Submitted: {{ email }}</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            email: '',
+            submitted: false
+        },
+        methods: {
+            handleSubmit() {
+                if (this.email !== '') {
+                    this.submitted = true;
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

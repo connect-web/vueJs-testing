@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js Slots</title>
+</head>
+<body>
+<div id="app">
+    <h1>Vue.js Slots Example</h1>
+    <custom-component>
+        <p>This content is passed to the slot.</p>
+    </custom-component>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script>
+    Vue.component('custom-component', {
+        template: `
+        <div>
+          <h2>Component Title</h2>
+          <slot></slot>
+        </div>
+      `
+    });
+
+    new Vue({
+        el: '#app'
+    });
+</script>
+</body>
+</html>

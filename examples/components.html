@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js Components</title>
+</head>
+<body>
+<div id="app">
+    <h1>Vue.js Reusable Components</h1>
+    <custom-message message="Hello from Vue component!"></custom-message>
+    <custom-message message="This is another message."></custom-message>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script>
+    Vue.component('custom-message', {
+        props: ['message'],
+        template: '<p>{{ message }}</p>'
+    });
+
+    new Vue({
+        el: '#app'
+    });
+</script>
+</body>
+</html>

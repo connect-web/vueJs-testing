@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js POST Request Example</title>
+</head>
+<body>
+<div id="app">
+    <h1>POST Request Example</h1>
+    <button @click="postData">Send POST Request</button>
+    <pre>{{ response }}</pre>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            response: ''
+        },
+        methods: {
+            postData() {
+                fetch('https://jsonplaceholder.typicode.com/posts', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        title: 'foo',
+                        body: 'bar',
+                        userId: 1
+                    })
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        this.response = data;
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            }
+        }
+    });
+</script>
+</body>
+</html>
